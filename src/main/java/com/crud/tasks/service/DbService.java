@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class DbService {
         return repository.save(task);
     }
 
-    public void delateById(final Long taskId) {
+    public void deleteById(final Long taskId) {
         repository.deleteById(taskId);
     }
 }

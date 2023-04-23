@@ -5,12 +5,10 @@ import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin("*")
@@ -35,7 +33,7 @@ public class TaskController {
 
     @DeleteMapping(value = "{taskId}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) {
-        service.delateById(taskId);
+        service.deleteById(taskId);
         return ResponseEntity.ok().build();
     }
 
