@@ -3,6 +3,7 @@ package com.crud.tasks.facade;
 import com.crud.tasks.domain.*;
 import com.crud.tasks.mapper.TrelloMapper;
 import com.crud.tasks.service.TrelloService;
+import com.crud.tasks.validator.TrelloValidator;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ public class TrelloFacade {
 
     public CreatedTrelloCardDto createCard(final TrelloCardDto trelloCardDto) {
         TrelloCard trelloCard = trelloMapper.mapToCard(trelloCardDto);
-        trelloValidator.validateCard(trelloCard);
+//        trelloValidator.validateCard(trelloCard);
         return trelloService.createTrelloCardDto(trelloMapper.mapToCardDto(trelloCard));
     }
 
