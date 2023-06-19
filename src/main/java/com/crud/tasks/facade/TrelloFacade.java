@@ -28,7 +28,7 @@ public class TrelloFacade {
 
     public CreatedTrelloCardDto createCard(final TrelloCardDto trelloCardDto) {
         TrelloCard trelloCard = trelloMapper.mapToCard(trelloCardDto);
-//        trelloValidator.validateCard(trelloCard);
+        trelloValidator.validateCard(trelloCard);
         return trelloService.createTrelloCardDto(trelloMapper.mapToCardDto(trelloCard));
     }
 
